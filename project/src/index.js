@@ -1,10 +1,6 @@
 import ReactDOM from "react-dom/client";
-// import Container from "./container";
-// import ConnectionPage from "./connectionPage";
-// import Cart from "./cart";
-import ConnectionPage from "./connectionPage";
-
+import ProductsReviews from "./productReviews";
 
 const obj = document.getElementById("root");
-const reactRoot = ReactDOM.createRoot(obj);
-reactRoot.render(<ConnectionPage />)
+const ref = ReactDOM.createRoot(obj);
+ref.render(<ProductsReviews />);
