@@ -13,6 +13,7 @@ function Reviews() {
             <input type="text" ref={firstRef}/>
             <button type="submit">Submit</button>
         </form>
+        <div><List/></div>
     </div>);
 }
 export default Reviews;
