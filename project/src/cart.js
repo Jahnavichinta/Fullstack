@@ -17,6 +17,8 @@ function Cart({path, name, description}) {
             </center>
         </div>
     )
+
+    
 }
 export default Cart;
 

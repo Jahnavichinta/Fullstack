@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import List from "./reviewsList";
 
 function Reviews() {
     const firstRef = useRef(null);
@@ -13,6 +14,7 @@ function Reviews() {
             <input type="text" ref={firstRef}/>
             <button type="submit">Submit</button>
         </form>
+        <div><List/></div>
     </div>);
 }
 export default Reviews;
