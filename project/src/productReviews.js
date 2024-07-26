@@ -1,9 +1,11 @@
+import Navigation from "./navigation";
 import Products from "./products";
 import Reviews from "./reviews";
 
 function ProductsReviews() {
     return (
         <div style={{margin:20, padding:5}}>
+            <Navigation/>
             <h1>iPhone</h1>
             <div style={{border:"1px solid black"}}> <Products imgPath={'mobile.jpeg'}/> </div> <br/>
             <div style={{border:"1px solid black", padding:15}}>
@@ -16,3 +18,6 @@ function ProductsReviews() {
     )
 }
 export default ProductsReviews;
+
+
+

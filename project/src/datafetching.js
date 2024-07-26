@@ -1,5 +1,6 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 import Cart from "./cartWithDataFetching";
+import Navigation from "./navigation";
 
 function Datafetch(){
     const [data, setData] = useState([]);
@@ -16,9 +17,11 @@ function Datafetch(){
     })
   
     return (
-        <div style={{display:'flex', flexFlow:'row wrap'}}>
-                {data.map((dataItem,index) => <Cart id={dataItem.id} path={dataItem.image} title={dataItem.title} price={dataItem.price} descript={dataItem.description} category={dataItem.category} rating={dataItem.rating.rate} count={dataItem.rating.count}/>)}
-            
+        <div>
+            <Navigation/>
+            <div style={{display:'flex', flexFlow:'row wrap'}}>
+                    {data.map((dataItem,index) => <Cart id={dataItem.id} path={dataItem.image} title={dataItem.title} price={dataItem.price} descript={dataItem.description} category={dataItem.category} rating={dataItem.rating.rate} count={dataItem.rating.count}/>)}   
+            </div>
         </div>
     );
 
