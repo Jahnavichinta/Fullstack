@@ -2,16 +2,16 @@ import { useContext } from "react";
 import { globalContext } from "./App";
 
 function Cart({id, path, title, price, descript, category, rating, count}) {
-    const {card, setCard} = useContext(globalContext);
+    const {setCard} = useContext(globalContext);
     const {globalCount, setGlobalCount} = useContext(globalContext);
    const func = () => {
         const obj = {
             id, path, title, price, descript, category, rating, count
         }
         setGlobalCount(globalCount+1);
-        setCard(obj);
-        // setCard((prevCards) => [...prevCards, {id:obj.id, path:obj.path, title:obj.title, price:obj.price, descript: obj.descript, category:obj.category, rating:obj.rating, count:obj.count }]);
-   }
+        // setCard(obj);
+        setCard((prevCards) => [...prevCards, obj]);
+    }
     return (
         <div style={{backgroundColor:'white', boxShadow:'0px 4px 8px rgba(0,0,0,0.9)', margin:20, borderRadius:10, padding:40, paddingTop:20, paddingBottom:40, width:210}}>
             <img src="wishlistSymbol.jpeg" alt="wishlist" width={40} height={40} style={{float:'right'}}/>

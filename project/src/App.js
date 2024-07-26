@@ -10,7 +10,7 @@ function App() {
     const [globalCount, setGlobalCount] = useState(0);
     const [globalUserObject, setGlobalUserObject] = useState({});
     const [globalIsLogin, setGlobalIsLogin] = useState(false);
-    const [card, setCard] = useState({});
+    const [card, setCard] = useState([]);
 
     return (
         <globalContext.Provider value = {{globalCount, setGlobalCount, globalUserObject, setGlobalUserObject, globalIsLogin, setGlobalIsLogin, card, setCard}}>
