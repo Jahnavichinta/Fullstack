@@ -3,8 +3,8 @@ import { globalContext } from './App';
 import Navigation from './navigation';
 
 function Profile() {
+    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
     const { globalUserObject } = useContext(globalContext);
-    const {setGlobalIsLogin} = useContext(globalContext);
     const [showPassword, setShowPassword] = useState(false);
     const [eyeIcon, setEyeIcon] = useState(true);
     const logoutaction = () => {setGlobalIsLogin(false);}
@@ -34,7 +34,7 @@ function Profile() {
                 <strong>
                     <p>College ID</p>
                 </strong>
-                <p style={{ border: '1px solid black', padding: 5 }}>{globalUserObject.collegeIdValue}</p>
+                <p style={{ border: '1px solid black', padding: 5 }}>{globalIsLogin? globalUserObject.collegeIdValue :"No Data"}</p>
                 <strong>
                     <p>Password</p>
                 </strong>
@@ -53,19 +53,19 @@ function Profile() {
                 <strong>
                     <p>Email address</p>
                 </strong>
-                <p style={{ border: '1px solid black', padding: 5 }}>{globalUserObject.emailValue}</p>
+                <p style={{ border: '1px solid black', padding: 5 }}>{globalIsLogin? globalUserObject.emailValue : "No Data"}</p>
                 <strong>
                     <p>Branch</p>
                 </strong>
-                <p style={{ border: '1px solid black', padding: 5 }}>{globalUserObject.branchValue}</p>
+                <p style={{ border: '1px solid black', padding: 5 }}>{globalIsLogin? globalUserObject.branchValue :"No Data"}</p>
                 <strong>
                     <p>Year</p>
                 </strong>
-                <p style={{ border: '1px solid black', padding: 5 }}>{globalUserObject.yearValue}</p>
+                <p style={{ border: '1px solid black', padding: 5 }}>{globalIsLogin? globalUserObject.yearValue :"No Data"}</p>
                 <strong>
                     <p>Gender</p>
                 </strong>
-                <p style={{ border: '1px solid black', padding: 5 }}>{globalUserObject.genderValue}</p>
+                <p style={{ border: '1px solid black', padding: 5 }}>{globalIsLogin? globalUserObject.genderValue : "No Data"}</p>
             </div>
         </div>
     );

@@ -1,14 +1,12 @@
 import { useRef, useState, useEffect, useContext } from "react";
-// import { UserContext } from "./home";
 import { globalContext } from "./App";
 
 function Login() {
-    const {globalUserObject, setGlobalUserObject} = useContext(globalContext);
+    const {globalUserObject} = useContext(globalContext);
     const collegeIdRef = useRef(null);
     const passwordRef = useRef(null);
     const [loginMessage, setMessage] = useState('');
-    // const {isLogin, setIsLogin} = useContext(UserContext);
-    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
+    const { setGlobalIsLogin} = useContext(globalContext);
     useEffect(() => {
         collegeIdRef.current.focus();
     });

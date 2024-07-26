@@ -1,28 +1,44 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Datafetch from "./datafetching";
-import Home from "./home";
-import { createContext, useState } from "react";
-import Profile from "./profile";
-import AddToCart from "./Addtocart";
 
-export const globalContext = createContext();
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Cart from './cartWithDataFetching';
+import ProductsReviews from './productReviews';
+import AddToCart from './Addtocart';
+import Home from './home'; 
+import Profile from './profile';
+import Datafetch from './datafetching';
+import Payment from "./payment";
+export const globalContext = React.createContext();
+
 function App() {
-    const [globalCount, setGlobalCount] = useState(0);
-    const [globalUserObject, setGlobalUserObject] = useState({});
-    const [globalIsLogin, setGlobalIsLogin] = useState(false);
     const [card, setCard] = useState([]);
+    const [globalCount, setGlobalCount] = useState(0);
+    const [globalPrice, setGlobalPrice] = useState(0);
+    const [data, setData] = useState({});
+    const [globalIsLogin, setGlobalIsLogin] = useState(false);
+    const [globalUserObject, setGlobalUserObject] = useState({});
 
     return (
-        <globalContext.Provider value = {{globalCount, setGlobalCount, globalUserObject, setGlobalUserObject, globalIsLogin, setGlobalIsLogin, card, setCard}}>
-            <BrowserRouter>
+        <globalContext.Provider value={{
+            card, setCard,
+            globalCount, setGlobalCount,
+            globalPrice, setGlobalPrice,
+            data, setData,
+            globalIsLogin, setGlobalIsLogin,
+            globalUserObject, setGlobalUserObject
+        }}>
+            <Router>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/products" element={<Datafetch/>}/>
-                    <Route path="/cart" element={<AddToCart/>}/>
+                    <Route path="/" element={<Home />} /> 
+                    <Route path="/cart" element={<AddToCart />} />
+                    <Route path="/product-reviews" element={<ProductsReviews />} />
                     <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/products" element={<Datafetch/>}/>
+                    <Route path="/order-confirmation" element={<Payment/>}/>
                 </Routes>
-            </BrowserRouter>
+            </Router>
         </globalContext.Provider>
     );
 }
+
 export default App;

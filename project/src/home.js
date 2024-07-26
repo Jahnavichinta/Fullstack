@@ -1,10 +1,10 @@
-import { createContext, useContext, useState } from "react";
+import { useContext} from "react";
 import SwitchTabs from "./onBoarding";
 import Welcome from "./welcome";
 import { globalContext } from "./App";
 
 function Home() {
-    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
+    const {globalIsLogin} = useContext(globalContext);
     return (
             <div>
                 {

@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { globalContext } from "./App";
 
 function RegisterPage() {
-    // const { setUser } = useContext(UserContext);
     const [collegeIdValue, setCollegeId] = useState('');
     const [passwordValue, setPassword] = useState('');
     const [emailValue, setEmail] = useState('');

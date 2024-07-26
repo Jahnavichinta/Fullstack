@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { globalContext } from './App';
 
-function Price({ p }) {
+function Price({ p , q}) {
+    const {globalPrice, setGlobalPrice} = useContext(globalContext);
     const { globalCount, setGlobalCount } = useContext(globalContext);
-    const [mrp, setMrp] = useState(p); // Initialize mrp with the passed prop p
-    const [number, setNumber] = useState(1);
-    const [totalPrice, setTotalPrice] = useState(p); // Initialize total price with the passed prop p
+    const [mrp, setMrp] = useState(p); 
+    const [number, setNumber] = useState(q);
+    const [totalPrice, setTotalPrice] = useState(p); 
 
     useEffect(() => {
         console.log("Mounted");
@@ -19,7 +20,8 @@ function Price({ p }) {
 
     useEffect(() => {
         console.log("Updated!!!");
-        setTotalPrice(mrp * number); // Update total price whenever number changes
+        setTotalPrice(mrp * number); 
+       
     }, [number, mrp]);
 
     const funcBtnClick = () => {
@@ -28,6 +30,7 @@ function Price({ p }) {
             setNumber(prevNumber => {
                 const newNumber = prevNumber - 1;
                 setGlobalCount(globalCount - 1);
+                setGlobalPrice(globalPrice - mrp);
                 return newNumber;
             });
         }
@@ -38,6 +41,7 @@ function Price({ p }) {
         setNumber(prevNumber => {
             const newNumber = prevNumber + 1;
             setGlobalCount(globalCount + 1);
+            setGlobalPrice(globalPrice + mrp);
             return newNumber;
         });
     };
