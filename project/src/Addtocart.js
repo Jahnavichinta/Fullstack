@@ -22,6 +22,7 @@ function AddToCart() {
         <div style={{display:'flex'}}>
             <div>
                 
+                
                 {card.map((item, index) => (
                     <div key={index} style={{ backgroundColor:'white', boxShadow:'0px 4px 8px rgba(0,0,0,0.9)', margin:20, borderRadius:10, padding:50, paddingTop:20, paddingBottom:20, display:'flex'}}>
                         <img src={item.path} alt="pic" width={130} height={150} />

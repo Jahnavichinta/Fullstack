@@ -22,7 +22,7 @@ function ProductsReviews() {
             count: data.count,
             quantity: 1
         };
-        setCard((prevCards) => {
+        setCard((prevCards) => {    
             const existingProduct = prevCards.find((product) => product.id === obj.id);
             if (existingProduct) {
                 const updatedCards = prevCards.map((product) =>
