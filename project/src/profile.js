@@ -7,7 +7,7 @@ function Profile() {
     const { globalUserObject } = useContext(globalContext);
     const [showPassword, setShowPassword] = useState(false);
     const [eyeIcon, setEyeIcon] = useState(true);
-    const logoutaction = () => {setGlobalIsLogin(false);}
+    // const logoutaction = () => {setGlobalIsLogin(false);}
 
     useEffect(() => {
         const name = localStorage.getItem("name");

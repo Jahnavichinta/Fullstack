@@ -8,8 +8,8 @@ function RegisterPage() {
     const [branchValue, setBranch] = useState('');
     const [genderValue, setGender] = useState('');
     const [yearValue, setYear] = useState('');
-    const [user, setUser] = useState({});
-    const {globalUserObject, setGlobalUserObject} = useContext(globalContext);
+    const [setUser] = useState({});
+    const { setGlobalUserObject} = useContext(globalContext);
 
     const getCollegeId = (event) => {
         setCollegeId(event.target.value);

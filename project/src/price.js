@@ -22,6 +22,7 @@ function Price({ p , q}) {
     useEffect(() => {
         console.log("Updated!!!");
         setTotalPrice(mrp * number); 
+        setMrp(mrp);
        
     }, [number, mrp]);
 
