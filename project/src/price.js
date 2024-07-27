@@ -8,15 +8,16 @@ function Price({ p , q}) {
     const [number, setNumber] = useState(q);
     const [totalPrice, setTotalPrice] = useState(p); 
 
-    useEffect(() => {
-        console.log("Mounted");
-        console.log(number);
-        console.log(number + 1);
-        console.log(mrp * number);
-        return () => {
-            console.log("Unmounted");
-        };``
-    }, []);
+    // useEffect(() => {
+    //     console.log("Mounted");
+    //     console.log(number);
+    //     console.log(number + 1);
+    //     console.log(mrp * number);
+    //     setMrp(mrp);
+    //     return () => {
+    //         console.log("Unmounted");
+    //     };``
+    // }, []);
 
     useEffect(() => {
         console.log("Updated!!!");
